@@ -3,7 +3,7 @@ import { v1 as uuid } from 'uuid'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
-
+// showing vs-code github setup
 class App extends Component {
   state = {
     items: [
@@ -12,35 +12,34 @@ class App extends Component {
     ],
     id: uuid(),
     item: '',
-    editiItem: false,
+    editItem: false,
   }
-  handleChange = () => {
+  handleChange = (e) => {
     console.log('handle change')
   }
-  handleSubmit = () => {
-    console.log('handle submit')
+  handleSubmit = (e) => {
+    console.log('handle Submit')
   }
   clearList = () => {
-    console.log('clear list')
+    console.log('clear list ')
   }
   handleDelete = (id) => {
     console.log(`handle edit ${id}`)
   }
   handleEdit = (id) => {
-    console.log(`handle edit ${id}`)
+    console.log(`edit edit ${id}`)
   }
-
   render() {
     return (
       <div className='container'>
         <div className='row'>
-          <div className='col-10 max-auto col-md-8 mt-5'>
+          <div className='col-10 mx-auto col-md-8 mt-5'>
             <h3 className='text-capitalize text-center'>todo input</h3>
             <TodoInput
-              item={this.state.items}
+              item={this.state.item}
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
-              editiItem={this.state.editiItem}
+              editItem={this.state.editItem}
             />
             <TodoList
               items={this.state.items}
